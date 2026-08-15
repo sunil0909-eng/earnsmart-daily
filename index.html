@@ -1,1 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>EarnSmart Daily | Learn • Build • Earn</title>
+
+<meta name="description"
+content="EarnSmart Daily helps beginners learn useful digital skills, build practical projects and discover responsible online opportunities.">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#06110c;
+  color:#f5fff9;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(6,17,12,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #173526;
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#00f58b;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  color:#b9c8bf;
+  font-size:14px;
+}
+
+.nav-links a:hover{
+  color:#00f58b;
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+  padding:95px 0 80px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 10%,#064c2c 0,transparent 35%),
+    #06110c;
+}
+
+.badge{
+  display:inline-block;
+  padding:9px 17px;
+  border:1px solid #087a48;
+  border-radius:30px;
+  color:#00f58b;
+  background:#08291b;
+  font-size:14px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  max-width:850px;
+  margin:auto;
+  font-size:clamp(42px,7vw,78px);
+  line-height:1.02;
+}
+
+.hero h1 span{
+  color:#00f58b;
+}
+
+.hero p{
+  max-width:700px;
+  margin:25px auto;
+  color:#aabbb1;
+  font-size:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 25px;
+  border-radius:12px;
+  background:#00f58b;
+  color:#001b0e;
+  font-weight:800;
+  margin:8px;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-outline{
+  background:transparent;
+  color:#00f58b;
+  border:1px solid #168554;
+}
+
+/* SECTIONS */
+
+section{
+  padding:75px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#91a39a;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.stat{
+  background:#0a1b13;
+  border:1px solid #183a29;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:#00f58b;
+  font-size:30px;
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:#0a1b13;
+  border:1px solid #193b2a;
+  border-radius:20px;
+  padding:25px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#00a95e;
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#9cafA5;
+  font-size:14px;
+}
+
+.card button{
+  margin-top:18px;
+  border:0;
+  background:#102c1f;
+  color:#00f58b;
+  padding:10px 15px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+/* ROADMAP */
+
+.roadmap{
+  max-width:800px;
+  margin:auto;
+}
+
+.step{
+  display:flex;
+  gap:20px;
+  margin-bottom:22px;
+  background:#0a1b13;
+  padding:22px;
+  border-radius:16px;
+  border:1px solid #183a29;
+}
+
+.number{
+  min-width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#00f58b;
+  color:#002214;
+  font-weight:bold;
+}
+
+.step p{
+  color:#9eafa6;
+}
+
+/* SAFETY */
+
+.safety{
+  background:#100f08;
+  border:1px solid #4c3d12;
+  border-radius:22px;
+  padding:30px;
+}
+
+.safety h3{
+  color:#ffd34d;
+  margin-bottom:12px;
+}
+
+.safety li{
+  margin:9px 0;
+  color:#c5c5ad;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
+details{
+  background:#0a1b13;
+  border:1px solid #193b2a;
+  border-radius:14px;
+  padding:18px 20px;
+  margin:12px 0;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+}
+
+details p{
+  color:#9eafa6;
+  margin-top:12px;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  background:
+    linear-gradient(135deg,#06351f,#06110c);
+  border:1px solid #17643e;
+  border-radius:25px;
+  padding:55px 20px;
+}
+
+.cta h2{
+  font-size:40px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid #173526;
+  padding:35px 0;
+  color:#83958b;
+  text-align:center;
+}
+
+footer strong{
+  color:#00f58b;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#07130d;
+    padding:20px;
+    flex-direction:column;
+    border-bottom:1px solid #173526;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:65px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .section-title h2,
+  .cta h2{
+    font-size:32px;
+  }
+
+  section{
+    padding:55px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      Earn<span>Smart</span> Daily
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#skills">Skills</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#safety">Safety</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="badge">
+      💚 Learn • Build • Earn Smarter
+    </div>
+
+    <h1>
+      Build Skills.<br>
+      Create <span>Opportunities.</span>
+    </h1>
+
+    <p>
+      A beginner-friendly guide to useful digital skills,
+      practical projects and responsible online opportunities.
+    </p>
+
+    <a href="#skills" class="btn">
+      Explore Skills →
+    </a>
+
+    <a href="#roadmap" class="btn btn-outline">
+      Start Roadmap
+    </a>
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>6+</strong>
+        Skill Paths
+      </div>
+
+      <div class="stat">
+        <strong>100%</strong>
+        Beginner Friendly
+      </div>
+
+      <div class="stat">
+        <strong>1</strong>
+        Simple Roadmap
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Choose Your Skill</h2>
+      <p>Start with one skill and build real evidence of your work.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="icon">💼</div>
+        <h3>Freelancing</h3>
+        <p>
+          Learn how to turn a useful skill into small,
+          practical client projects.
+        </p>
+        <button onclick="showTip('Freelancing')">
+          View Path →
+        </button>
+      </article>
+
+
+      <article class="card">
+        <div class="icon">🤖</div>
+        <h3>AI & Productivity</h3>
+        <p>
+          Learn responsible ways to use AI for research,
+          writing, planning and productivity.
+        </p>
+        <button onclick="showTip('AI & Productivity')">
+          View Path →
+        </button>
+      </article>
+
+
+      <article class="card">
+        <div class="icon">✍️</div>
+        <h3>Writing</h3>
+        <p>
+          Practice useful writing such as articles,
+          descriptions, research notes and web content.
+        </p>
+        <button onclick="showTip('Writing')">
+          View Path →
+        </button>
+      </article>
+
+
+      <article class="card">
+        <div class="icon">🎨</div>
+        <h3>Design</h3>
+        <p>
+          Learn visual basics and create simple designs
+          that demonstrate your ability.
+        </p>
+        <button onclick="showTip('Design')">
+          View Path →
+        </button>
+      </article>
+
+
+      <article class="card">
+        <div class="icon">🎬</div>
+        <h3>Video Editing</h3>
+        <p>
+          Start with short videos, captions, cuts,
+          transitions and simple storytelling.
+        </p>
+        <button onclick="showTip('Video Editing')">
+          View Path →
+        </button>
+      </article>
+
+
+      <article class="card">
+        <div class="icon">🔎</div>
+        <h3>Research & VA</h3>
+        <p>
+          Build skills in online research, organization,
+          spreadsheets and virtual assistance.
+        </p>
+        <button onclick="showTip('Research & VA')">
+          View Path →
+        </button>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ROADMAP -->
+
+<section id="roadmap">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Your Smart Roadmap</h2>
+      <p>Don't chase shortcuts. Build something useful step by step.</p>
+    </div>
+
+    <div class="roadmap">
+
+      <div class="step">
+        <div class="number">1</div>
+        <div>
+          <h3>Choose one skill</h3>
+          <p>
+            Pick something you can practice regularly:
+            writing, design, editing, research, AI or another useful skill.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="step">
+        <div class="number">2</div>
+        <div>
+          <h3>Learn the basics</h3>
+          <p>
+            Spend focused time learning from reliable tutorials,
+            documentation or courses.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="step">
+        <div class="number">3</div>
+        <div>
+          <h3>Build one sample</h3>
+          <p>
+            Create a small project that shows what you can actually do.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="step">
+        <div class="number">4</div>
+        <div>
+          <h3>Improve it</h3>
+          <p>
+            Ask for feedback, find weak areas and make your work clearer.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="step">
+        <div class="number">5</div>
+        <div>
+          <h3>Create a portfolio</h3>
+          <p>
+            Keep your best work in one simple place that you can share.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="step">
+        <div class="number">6</div>
+        <div>
+          <h3>Find suitable opportunities</h3>
+          <p>
+            Look for legitimate opportunities that match your current
+            skill level. Never pay someone simply for a guaranteed job.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="step">
+        <div class="number">7</div>
+        <div>
+          <h3>Repeat & level up</h3>
+          <p>
+            Consistency and improving your skills are more valuable
+            than chasing every “easy money” trend.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SAFETY -->
+
+<section id="safety">
+
+  <div class="container">
+
+    <div class="safety">
+
+      <h3>🛡️ Smart Earning Safety Rule</h3>
+
+      <ul>
+        <li>Never share your password or OTP.</li>
+        <li>Never share your bank PIN or private security information.</li>
+        <li>Be careful with websites asking for unnecessary upfront payments.</li>
+        <li>Don't trust “guaranteed income” promises.</li>
+        <li>Verify an opportunity independently before using it.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Quick Answers</h2>
+      <p>Simple answers for someone starting from zero.</p>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Can I start without experience?</summary>
+        <p>
+          Yes. Start with one skill, practice small projects and
+          build evidence of what you can do.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>How quickly can I earn?</summary>
+        <p>
+          There is no guaranteed timeline. Results depend on your
+          skills, consistency, opportunities and quality of work.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>What should I learn first?</summary>
+        <p>
+          Pick one skill that interests you and that you can practice
+          regularly. Start small and improve step by step.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>Are online opportunities guaranteed to be legitimate?</summary>
+        <p>
+          No. Always research an opportunity independently and never
+          share passwords, OTPs or sensitive financial information.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>Start With One Skill.</h2>
+
+      <p style="color:#a9bbb1;margin:15px 0 25px;">
+        Learn something useful today and build your first small project.
+      </p>
+
+      <a href="#skills" class="btn">
+        Choose My Skill →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <strong>EarnSmart Daily</strong>
+
+    <p>
+      Learn. Build. Earn smarter.
+    </p>
+
+    <p style="margin-top:10px;">
+      © 2026 EarnSmart Daily · Educational Project
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+  document
+    .getElementById("navLinks")
+    .classList.toggle("show");
+
+}
+
+
+function showTip(skill){
+
+  alert(
+    skill +
+    " path selected! Start by learning the basics, " +
+    "create one small project and keep improving it."
+  );
+
+}
+
+</script>
+
+</body>
+</html>
